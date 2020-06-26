@@ -62,6 +62,8 @@ def excelToRoam(text, mergeCellsColNum = -1):
                 sim_num += 1
             else:
                 break
+        if sim_num == len(table[i-1]):
+            lines += seg * sim_num + blankPad + '\n'
         for j, v in enumerate(table[i][sim_num:]):
             lines += seg * sim_num + seg * j + v + '\n'
     return lines.strip()
